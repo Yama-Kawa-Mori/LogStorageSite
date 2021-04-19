@@ -1,0 +1,361 @@
+/* 広域変数 */
+
+:root {
+    --yama-color: #f2a0a1;
+    --kawa-color: #83ccd2;
+    --mori-color: #b0ca71;
+}
+
+@media (max-width: 599px) {
+    :root {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+    :root {
+        font-size: 21px;
+    }
+}
+
+@media (min-width: 1025px) {
+    :root {
+        font-size: 24px;
+    }
+}
+
+/* 前ページ共通 */
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Noto Serif JP', serif;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(../image/satorinomado.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header, main, footer {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+@media (min-width: 1025px) {
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    header, main, footer {
+        margin: 0;
+        padding: 0;
+        width: 60%;
+    }
+}
+
+/* ヘッダー */
+
+header h1 {
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    padding: 1rem .5rem;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.4);
+    font-size: 1.5rem;
+    letter-spacing: 0.2em;
+    text-align: center;
+}
+
+header h1:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.15em;
+    content: '';
+    background-image: -webkit-linear-gradient(20deg, red, blue, green);
+    background-image: linear-gradient(70deg, red, blue, green);
+}
+
+header a {
+    text-decoration: none;
+}
+
+header a:link {
+    color: inherit;
+}
+
+header a:visited {
+    color: inherit;
+}
+
+header span {
+    display: inline-block;
+}
+
+/* フッター */
+
+footer {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+@media (min-width: 1025px) {
+    footer {
+        left: 20%;
+    }
+}
+
+footer table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0 1rem;
+}
+
+footer button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 0.75rem;
+    background-color: white;
+    outline: none;
+}
+
+footer button:active {
+    color: white;
+    background-color: gray;
+    box-shadow: 0 0.2rem 0.1rem rgba(0,0,0,0.4) inset;
+}
+
+/* index */
+
+#logs {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+#logs tr:nth-of-type(4n) {
+    height: 0.75rem;
+}
+
+#logs tr.yama {
+    background: linear-gradient(to right, #f2a0a1 30%, white);
+    background: linear-gradient(to right, var(--yama-color) 30%, white);
+}
+
+#logs tr.kawa {
+    background: linear-gradient(to right, #83ccd2 30%, white);
+    background: linear-gradient(to right, var(--kawa-color) 30%, white);
+}
+
+#logs tr.mori {
+    background: linear-gradient(to right, #b0ca71 30%, white);
+    background: linear-gradient(to right, var(--mori-color) 30%, white);
+}
+
+#logs th {
+    padding: 0.5rem 1rem;
+    width: 100%;
+    font-size: 1rem;
+    text-align: left;
+    border-radius: 1rem 0 0 0;
+}
+
+#logs td {
+    padding: 0 1rem;
+    max-width: 0;
+    font-size: 0.75rem;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#logs .content {
+    width: 100%;
+    height: 2.5rem;
+}
+
+#logs .meeting_date {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#logs .creator_id {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 1.25rem;
+    text-align: right;
+    border-radius: 0 0 1rem 0;
+}
+
+#logs a {
+    text-decoration: none;
+}
+
+#logs a:link {
+    color: black;
+}
+
+#logs a:visited {
+    color: black;
+}
+
+#logs a:active {
+    background-color: #ccc;
+}
+
+/* show */
+
+article {
+    padding-bottom: 0.5rem;
+    border-radius: 1.35rem 0 1.35rem 0;
+    background-color: white;
+}
+
+article .title {
+    margin: 0;
+    padding: 1.25rem 1.5rem;
+    font-size: 1.35rem;
+}
+
+article .content {
+    margin: 0;
+    padding: 0 1.5rem;
+    font-size: 1rem;
+    white-space: pre-wrap;
+}
+
+article .meeting_date {
+    padding: 0 1.5rem;
+}
+
+article .creator_id {
+    margin: 1.25rem 1.5rem;
+    font-size: 1.75rem;
+}
+
+article .yama {
+    color: #f2a0a1;
+    color: var(--yama-color);
+}
+
+article .kawa {
+    color: #83ccd2;
+    color: var(--kawa-color);
+}
+
+article .mori {
+    color: #b0ca71;
+    color: var(--mori-color);
+}
+
+/* 作成、編集、更新ボタン */
+
+.btnOfText {
+    display: flex;
+    justify-content: center;
+}
+
+.btnOfText button, .btnOfText input {
+    margin: -0.5rem 0;
+    padding: 0.2em 2em;
+    border: 1px solid black;
+    border-radius: 1em;
+    font-size: 0.75rem;
+    background-color: white;
+    outline: none;
+}
+
+.btnOfText button:active, .btnOfText input:active {
+    color: white;
+    background-color: gray;
+    box-shadow: 0 0.2rem 0.1rem rgba(0,0,0,0.4) inset;
+}
+
+/* create, edit */
+
+form {
+    width: 100%;
+}
+
+form fieldset {
+    padding: 0;
+    border: none;
+}
+
+form .title, form .content, form .meeting_date, form .creator_id {
+    width: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Noto Serif JP', serif;
+}
+
+form .title {
+    padding: 0.5rem 0.75rem;
+    font-size: 1.25rem;
+    border-radius: 1.25rem 0 0 0;
+}
+
+form .content {
+    padding: 0.5rem 0.75rem;
+    height: 16.5rem;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+form .meeting_date {
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+}
+
+form .creator_id {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0.6rem;
+    background-color: white;
+    border-radius: 0 0 1.25rem 0;
+}
+
+form .radio {
+    display: none;
+}
+
+form .fas {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-left: 1.5rem;
+    font-size: 1.75rem;
+    color: #ccc;
+}
+
+form .radio:checked#yama + .fas {
+    color: #f2a0a1;
+    color: var(--yama-color);
+}
+
+form .radio:checked#kawa + .fas {
+    color: #83ccd2;
+    color: var(--kawa-color);
+}
+
+form .radio:checked#mori + .fas {
+    color: #b0ca71;
+    color: var(--mori-color);
+}
