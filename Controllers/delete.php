@@ -15,8 +15,6 @@ if($xml && $id != null)
         }
     }
 
-    print_r($xml -> logs);
-
     $file = @fopen("../xml/{$filename}", 'w');
     @fwrite($file, $xml -> asXML());
     @fclose($file);

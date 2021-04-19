@@ -87,17 +87,22 @@ if($xml)
                     {
                         for($i = 0; $i < count($result); $i++)
                         {
-                            echo "<tr class=" . setClass($result[$i]['creator_id']) . ">";
+                            echo "<tbody class=" . setClass($result[$i]['creator_id']) . ">";
+                            echo "<tr>";
                             echo "<th class='title' colspan='2'><a href='./Controllers/show.php?id={$result[$i]['id']}'>{$result[$i]['title']}</a></th>";
                             echo "</tr>";
-                            echo "<tr class=" . setClass($result[$i]['creator_id']) . ">";
+                            echo "<tr>";
                             echo "<td class='content' colspan='2'><a href='./Controllers/show.php?id={$result[$i]['id']}'>{$result[$i]['content']}</a></td>";
                             echo "</tr>";
-                            echo "<tr class=" . setClass($result[$i]['creator_id']) . ">";
+                            echo "<tr>";
                             echo "<td class='meeting_date'><a href='./Controllers/show.php?id={$result[$i]['id']}'>" . date('Y-m-d', strtotime($result[$i]['meeting_date'])) . "</a></td>";
                             echo "<td class='creator_id'><a href='./Controllers/show.php?id={$result[$i]['id']}'><span class='" . setLogo($result[$i]['creator_id']) . "'></span></a></td>";
                             echo "</tr>";
+                            echo "</tbody>";
+                            echo "<tbody class='transparent'>";
                             echo "<tr><td colspan='2'></td></tr>";
+                            echo "</tbody>";
+                            
                         }
                     }
 
